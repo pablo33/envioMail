@@ -61,7 +61,7 @@ Module Module1
                 Dim _Adjunto As New Attachment(_dsDatos.Tables("adjuntos").Rows(0).Item("ruta"))
                 _correo.Attachments.Add(_Adjunto)
             Catch ex1 As Exception
-                MsgBox(ex1.Message)
+                Console.WriteLine(ex1.Message)
             End Try
         End Try
 
@@ -81,7 +81,7 @@ Module Module1
 
                 _ClienteSmtp.Send(_correo)
             Catch ex As Exception
-                MsgBox(ex.ToString)
+                Console.WriteLine(ex.ToString)
             End Try
         End If
     End Sub
